@@ -1,5 +1,8 @@
 def greeter(func):
-    pass
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return result.title()
+    return wrapper
 
 
 def sums_of_str_elements_are_equal(func):
