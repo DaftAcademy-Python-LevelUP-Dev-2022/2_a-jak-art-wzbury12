@@ -40,7 +40,7 @@ def format_output(*dec):
                 a = y.split("__")
                 val = ""
                 for z in a:
-                    if (x.keys().count(z) <= 0):
+                    if (z in x.keys()):
                         raise ValueError
                     else:
                         val += x[z] + " "
