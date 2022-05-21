@@ -1,7 +1,7 @@
 def greeter(func):
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
-        return result.title()
+        return "Aloha " + result.title()
     return wrapper
 
 
