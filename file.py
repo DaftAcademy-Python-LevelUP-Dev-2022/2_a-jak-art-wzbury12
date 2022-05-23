@@ -50,6 +50,13 @@ def format_output(*dec):
         return wrapper
     return format_output
 
-
+from functools import wraps
 def add_method_to_instance(klass):
-    pass
+    def decorator(func):
+        @wraps(func) 
+        def wrapper(self, *args, **kwargs): 
+            return func(*args, **kwargs)
+        setattr(klass, func.__name__, wrapper)
+        
+        return func
+    return decorator
