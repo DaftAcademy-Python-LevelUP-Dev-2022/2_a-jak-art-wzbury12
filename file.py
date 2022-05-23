@@ -34,15 +34,15 @@ def format_output(*dec):
             x = func(*args, **kwargs)
             ret = {}
             for y in dec:
-                if y == "":
-                    ret[y] = "Empty value"
-                    continue
+                
                 a = y.split("__")
                 val = ""
                 for z in a:
                     if (list(x.keys()).count(z) <= 0):
                         raise ValueError
-                    else:
+                    elif (x[z] == ""):
+                        val = 'Empty value '
+                    else: 
                         val += x[z] + " "
                 val = val[:-1]
                 ret[y] = val
