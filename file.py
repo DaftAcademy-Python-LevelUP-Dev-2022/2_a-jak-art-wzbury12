@@ -28,7 +28,7 @@ def sums_of_str_elements_are_equal(func):
     return wrapper
 
 
-def formatoutput(*dec):
+def format_output(*dec):
     def decorator(func):
         def wrapper(*args, **kwargs):
             x = func(*args, **kwargs)
