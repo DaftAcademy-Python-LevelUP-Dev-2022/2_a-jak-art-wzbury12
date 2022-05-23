@@ -29,7 +29,7 @@ def sums_of_str_elements_are_equal(func):
 
 
 def format_output(*dec):
-    def decorator(func):
+    def format_output(func):
         def wrapper(*args, **kwargs):
             x = func(*args, **kwargs)
             ret = {}
@@ -48,7 +48,7 @@ def format_output(*dec):
                 ret[y] = val
             return ret
         return wrapper
-    return decorator
+    return format_output
 
 
 def add_method_to_instance(klass):
