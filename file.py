@@ -35,7 +35,7 @@ def format_output(*dec):
             ret = {}
             for y in dec:
                 if y == "":
-                    ret[y] = "Empty value"
+                    ret[y] = ''
                     continue
                 a = y.split("__")
                 val = ""
